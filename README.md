@@ -1,1 +1,3 @@
-# sberbank-java-school
+# Sberbank Java School
+
+Sberbank Java School homework repository
