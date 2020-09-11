@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import ru.sberbank.homework.lesson1.shapes.circle.Circle;
 import ru.sberbank.homework.lesson1.shapes.triangle.Triangle;
 
+import static ru.sberbank.homework.lesson1.shapes.utils.TestUtil.round;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 strictfp class TriangleTest {
-    private static final byte BIT = 3;
     private static float sideA;
     private static float sideB;
     private static float sideC;
@@ -45,8 +46,4 @@ strictfp class TriangleTest {
         assertEquals(round(new Circle(radius).square()), round(triangle.inscribed().square()));
     }
 
-    public static double round(double value) {
-        double scale = Math.pow(10, BIT);
-        return Math.round(value * scale) / scale;
-    }
 }

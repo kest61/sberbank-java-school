@@ -5,10 +5,8 @@ import org.junit.jupiter.api.Test;
 import ru.sberbank.homework.lesson1.shapes.triangle.EquilateralTriangle;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static ru.sberbank.homework.lesson1.shapes.utils.TestUtil.round;
 
-/**
- *
- */
 class EquilateralTriangleTest extends TriangleTest{
 	private static float side;
 	private static final byte SIDE_COUNT = 3;
