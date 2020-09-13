@@ -2,11 +2,14 @@ package ru.sberbank.homework.lesson1.shapes.quadrangles;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import ru.sberbank.homework.lesson1.shapes.FigureTest;
+import ru.sberbank.homework.lesson1.shapes.Shape;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuadrangleTest{
-	public static final int EDGES = 4;
+class QuadrangleTest extends FigureTest{
+	public static final byte EDGES = Shape.QUADRANGLE.getEdges();
+
 	protected static float width;
 	protected static float height;
 	protected static float side;
@@ -35,5 +38,10 @@ class QuadrangleTest{
 	@Test
 	void testSquarePerimeter(){
 		assertEquals(squarePerimeter, square.perimeter());
+	}
+
+	@Override
+	protected void testEdges(){
+		assertEquals(EDGES, rectangle.edges());
 	}
 }

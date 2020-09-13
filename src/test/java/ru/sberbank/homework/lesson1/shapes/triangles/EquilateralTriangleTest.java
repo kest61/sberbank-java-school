@@ -4,28 +4,26 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.sberbank.homework.lesson1.shapes.triangle.EquilateralTriangle;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.sberbank.homework.lesson1.shapes.utils.TestUtil.round;
 
 class EquilateralTriangleTest extends TriangleTest{
 	private static float side;
-	private static final byte SIDE_COUNT = 3;
 
 	protected static EquilateralTriangle equilateralTriangle;
 
 	@BeforeAll
 	static void setUp(){
 		side = 7.83f;
-		perimeter = SIDE_COUNT*side;
-		double oppositWidth = Math.acos((Math.pow(side, 2) + Math.pow(side, 2) - (Math.pow(side, 2)))/(2*side*side));
-		square = side*side*Math.sin(oppositWidth)/2;
 		equilateralTriangle = new EquilateralTriangle(side);
 		triangle = equilateralTriangle;
+
+		setTestData(new float[]{side, side, side});
 	}
 
 	@Test
-	void testEdges(){
-		assertEquals(SIDE_COUNT, equilateralTriangle.edges());
+	void testEquilateralEdges(){
+		assertEquals(EDGES, equilateralTriangle.edges());
 	}
 
 	@Test

@@ -14,7 +14,7 @@ public abstract class Figure implements GeometricFigure{
 		this.edges = shape.getEdges();
 	}
 
-	protected byte edges(){
+	public byte edges(){
 		return edges;
 	}
 

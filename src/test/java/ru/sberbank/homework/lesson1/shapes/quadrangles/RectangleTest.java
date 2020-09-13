@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.sberbank.homework.lesson1.shapes.utils.TestUtil.round;
 
-strictfp class RectangleTest extends QuadrangleTest{
+class RectangleTest extends QuadrangleTest{
 	private static Rectangle rectangle;
 	private static double square;
 

@@ -23,7 +23,7 @@ class SquareTest extends RectangleTest{
 	}
 
 	@Test
-	void testEdges(){
+	void testEquilterEdges(){
 		assertEquals(EDGES, rectangle.edges());
 	}
 
