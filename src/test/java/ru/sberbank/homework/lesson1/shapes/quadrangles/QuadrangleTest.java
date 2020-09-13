@@ -6,6 +6,7 @@ import ru.sberbank.homework.lesson1.shapes.FigureTest;
 import ru.sberbank.homework.lesson1.shapes.Shape;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static ru.sberbank.homework.lesson1.shapes.utils.TestUtil.round;
 
 class QuadrangleTest extends FigureTest{
 	public static final byte EDGES = Shape.QUADRANGLE.getEdges();
@@ -18,6 +19,7 @@ class QuadrangleTest extends FigureTest{
 
 	private static Quadrangle rectangle;
 	private static Quadrangle square;
+	private static Quadrangle rhombus;
 
 	@BeforeAll
 	static void setUp(){
@@ -28,6 +30,7 @@ class QuadrangleTest extends FigureTest{
 		squarePerimeter = EDGES*side;
 		rectangle = new Rectangle(width, height);
 		square = new Square(side);
+		rhombus = new Rhombus(side, height);
 	}
 
 	@Test
@@ -40,8 +43,22 @@ class QuadrangleTest extends FigureTest{
 		assertEquals(squarePerimeter, square.perimeter());
 	}
 
+	@Test
+	void testRhombusPerimeter(){
+		assertEquals(squarePerimeter, rhombus.perimeter());
+	}
+
 	@Override
 	protected void testEdges(){
 		assertEquals(EDGES, rectangle.edges());
 	}
+
+	@Test
+	void testSquare(){
+		Quadrangle rect = new Rectangle(side, side);
+		assertEquals(round(square.square()), round(rect.square()));
+		Quadrangle rhomb = new Rhombus(side,side);
+		assertEquals(round(square.square()), round(rhomb.square()));
+	}
+
 }
